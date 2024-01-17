@@ -15,6 +15,14 @@ export default {
       meta: {
         title: "input组件demo"
       }
+    },
+    {
+      path: "/component/mouse-position",
+      name: "鼠标位置",
+      component: () => import("@/views/component/mouse-position.vue"),
+      meta: {
+        title: "鼠标位置"
+      }
     }
   ]
 } as RouteConfigsTable;
