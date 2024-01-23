@@ -2,6 +2,7 @@
 import { ref, watch } from "vue";
 import MyInput from "@/views/component/input/MyInput.vue";
 import { debounce } from "@/utils/myUtils";
+import { message } from "@/utils/message";
 
 const inputVal = ref("test");
 
@@ -15,7 +16,9 @@ watch(
 
 function getValueByFetch() {
   setTimeout(() => {
-    console.log("接口数据");
+    message("模拟接口数据", {
+      type: "success"
+    });
   }, 1000);
 }
 const getValueByFetchDebounce = debounce(getValueByFetch, 500);
