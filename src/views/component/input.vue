@@ -7,7 +7,7 @@ import { message } from "@/utils/message";
 const inputVal = ref("test");
 
 watch(
-  () => inputVal.value,
+  () => inputVal.value, // 可支持ref reactive getter的值
   (newVal, oldVal) => {
     console.log({ newVal, oldVal });
     getValueByFetchDebounce();
