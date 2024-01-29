@@ -11,7 +11,7 @@ export default {
     {
       path: "/component/input",
       name: "input组件demo",
-      component: () => import("@/views/component/input.vue"),
+      component: () => import("@/views/component/input/input.vue"),
       meta: {
         title: "input组件demo"
       }
@@ -19,7 +19,7 @@ export default {
     {
       path: "/component/mouse-position",
       name: "鼠标位置",
-      component: () => import("@/views/component/mouse-position.vue"),
+      component: () => import("@/views/component/mouse-position/mouse-position.vue"),
       meta: {
         title: "鼠标位置"
       }
@@ -27,7 +27,8 @@ export default {
     {
       path: "/component/father-instance",
       name: "获取子组件实例",
-      component: () => import("@/views/component/father-instance.vue"),
+      component: () =>
+        import("@/views/component/father-instance/father-instance.vue"),
       meta: {
         title: "获取子组件实例"
       }
