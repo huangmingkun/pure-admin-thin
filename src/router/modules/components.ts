@@ -32,6 +32,15 @@ export default {
       meta: {
         title: "获取子组件实例"
       }
+    },
+    {
+      path: "/component/complex-form",
+      name: "复杂表单处理",
+      component: () =>
+        import("@/views/component/complex-form/complex-form.vue"),
+      meta: {
+        title: "复杂表单处理"
+      }
     }
   ]
 } as RouteConfigsTable;
