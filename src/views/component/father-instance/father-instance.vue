@@ -3,6 +3,10 @@ import ChildInstance from "@/views/component/father-instance/child-instance.vue"
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 
+defineOptions({
+  name: "get-instance"
+});
+
 const instanceRef = ref(null);
 const getChildInstance = () => {
   const childInstance = instanceRef.value; // 通过ref获取子组件实例

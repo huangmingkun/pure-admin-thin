@@ -4,6 +4,10 @@ import MyInput from "@/views/component/input/MyInput.vue";
 import { debounce } from "@/utils/myUtils";
 import { message } from "@/utils/message";
 
+defineOptions({
+  name: "input-demo"
+});
+
 const inputVal = ref("test");
 
 watch(

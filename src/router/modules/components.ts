@@ -9,8 +9,8 @@ export default {
   },
   children: [
     {
-      path: "/component/input",
-      name: "input组件demo",
+      path: "/component/input-demo",
+      name: "input-demo",
       component: () => import("@/views/component/input/input.vue"),
       meta: {
         title: "input组件demo"
@@ -18,15 +18,16 @@ export default {
     },
     {
       path: "/component/mouse-position",
-      name: "鼠标位置",
-      component: () => import("@/views/component/mouse-position/mouse-position.vue"),
+      name: "mouse-position",
+      component: () =>
+        import("@/views/component/mouse-position/mouse-position.vue"),
       meta: {
         title: "鼠标位置"
       }
     },
     {
       path: "/component/father-instance",
-      name: "获取子组件实例",
+      name: "get-instance",
       component: () =>
         import("@/views/component/father-instance/father-instance.vue"),
       meta: {
@@ -35,7 +36,7 @@ export default {
     },
     {
       path: "/component/complex-form",
-      name: "复杂表单处理",
+      name: "complex-form",
       component: () =>
         import("@/views/component/complex-form/complex-form.vue"),
       meta: {
