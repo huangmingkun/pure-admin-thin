@@ -11,9 +11,6 @@ import {
 import type { FormInstance, FormRules } from "element-plus";
 
 interface RuleForm {
-  name: string;
-  region: string;
-  count: string;
   date1: string;
   date2: string;
   delivery: boolean;
@@ -63,9 +60,6 @@ watch(
 const formSize = ref("default");
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive<RuleForm>({
-  name: "Hello",
-  region: "",
-  count: "",
   date1: "",
   date2: "",
   delivery: false,
@@ -75,24 +69,6 @@ const ruleForm = reactive<RuleForm>({
 });
 
 const rules = reactive<FormRules<RuleForm>>({
-  name: [
-    { required: true, message: "Please input Activity name", trigger: "blur" },
-    { min: 3, max: 5, message: "Length should be 3 to 5", trigger: "blur" }
-  ],
-  region: [
-    {
-      required: true,
-      message: "Please select Activity zone",
-      trigger: "change"
-    }
-  ],
-  count: [
-    {
-      required: true,
-      message: "Please select Activity count",
-      trigger: "change"
-    }
-  ],
   date1: [
     {
       type: "date",

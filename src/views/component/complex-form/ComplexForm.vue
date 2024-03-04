@@ -4,7 +4,7 @@ import FormItemB from "@/views/component/complex-form/FormItemB.vue";
 import { reactive, provide, ref, onMounted } from "vue";
 
 defineOptions({
-  name: "complex-form"
+  name: "ComplexForm"
 });
 
 const formData = ref({});
@@ -83,7 +83,7 @@ const resetForm = () => {
   />
   <el-button type="primary" @click="submitHandler">表单提交</el-button>
   <el-button @click="resetForm">重置表单</el-button>
-  <el-button @click="getFormData">模拟接口请求</el-button>
+  <el-button @click="getFormData">模拟接口请求表单回填数据</el-button>
 </template>
 
 <style scoped lang="scss"></style>

@@ -14,12 +14,6 @@ interface RuleForm {
   name: string;
   region: string;
   count: string;
-  date1: string;
-  date2: string;
-  delivery: boolean;
-  type: string[];
-  resource: string;
-  desc: string;
 }
 
 interface Emits {
@@ -65,13 +59,7 @@ const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive<RuleForm>({
   name: "Hello",
   region: "",
-  count: "",
-  date1: "",
-  date2: "",
-  delivery: false,
-  type: [],
-  resource: "",
-  desc: ""
+  count: ""
 });
 
 const rules = reactive<FormRules<RuleForm>>({
@@ -92,40 +80,6 @@ const rules = reactive<FormRules<RuleForm>>({
       message: "Please select Activity count",
       trigger: "change"
     }
-  ],
-  date1: [
-    {
-      type: "date",
-      required: true,
-      message: "Please pick a date",
-      trigger: "change"
-    }
-  ],
-  date2: [
-    {
-      type: "date",
-      required: true,
-      message: "Please pick a time",
-      trigger: "change"
-    }
-  ],
-  type: [
-    {
-      type: "array",
-      required: true,
-      message: "Please select at least one activity type",
-      trigger: "change"
-    }
-  ],
-  resource: [
-    {
-      required: true,
-      message: "Please select activity resource",
-      trigger: "change"
-    }
-  ],
-  desc: [
-    { required: true, message: "Please input activity form", trigger: "blur" }
   ]
 });
 
