@@ -35,10 +35,9 @@ export default {
       }
     },
     {
-      path: "/component/complex-form",
+      path: "/component/ComplexForm",
       name: "complex-form",
-      component: () =>
-        import("@/views/component/complex-form/complex-form.vue"),
+      component: () => import("@/views/component/complex-form/ComplexForm.vue"),
       meta: {
         title: "复杂表单处理"
       }

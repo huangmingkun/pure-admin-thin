@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import FormItemA from "@/views/component/complex-form/formItemA.vue";
-import FormItemB from "@/views/component/complex-form/formItemB.vue";
+import FormItemA from "@/views/component/complex-form/FormItemA.vue";
+import FormItemB from "@/views/component/complex-form/FormItemB.vue";
 import { reactive, provide, ref, onMounted } from "vue";
 
 defineOptions({
@@ -25,7 +25,7 @@ const getFormData = () => {
   };
 };
 onMounted(() => {});
-// 将子组件表单的参数添加到formData中
+// 将子组件表单的参数添加到formData中汇总
 const addParamsToFormData = (params: any) => {
   Object.assign(formData.value, params);
 };
@@ -60,6 +60,7 @@ const submitHandler = () => {
 };
 
 const formResetEvent = reactive([]);
+//  存储子组件的表单重置方法，在重置时统一调用
 const addFormResetEvent = func => {
   formResetEvent.push(func);
 };
