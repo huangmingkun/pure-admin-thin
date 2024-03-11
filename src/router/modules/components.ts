@@ -41,6 +41,14 @@ export default {
       meta: {
         title: "复杂表单处理"
       }
+    },
+    {
+      path: "/component/Permission",
+      name: "Permission",
+      component: () => import("@/views/component/permission/Permission.vue"),
+      meta: {
+        title: "权限指令"
+      }
     }
   ]
 } as RouteConfigsTable;
