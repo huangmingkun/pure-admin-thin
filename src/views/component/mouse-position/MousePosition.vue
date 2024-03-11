@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useMouse } from "@/hooks/useMouse";
+defineOptions({
+  name: "MousePosition"
+});
 // 组合式函数练习
 const { x, y } = useMouse();
 </script>

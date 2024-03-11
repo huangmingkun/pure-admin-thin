@@ -5,7 +5,7 @@ import { debounce } from "@/utils/myUtils";
 import { message } from "@/utils/message";
 
 defineOptions({
-  name: "input-demo"
+  name: "InputDemo"
 });
 
 const inputVal = ref("test");

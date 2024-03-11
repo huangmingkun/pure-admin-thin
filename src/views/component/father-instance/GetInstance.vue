@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ChildInstance from "@/views/component/father-instance/child-instance.vue";
+import ChildInstance from "@/views/component/father-instance/ChildInstance.vue";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 
 defineOptions({
-  name: "get-instance"
+  name: "GetInstance"
 });
 
 const instanceRef = ref(null);
@@ -19,8 +19,10 @@ const getChildInstance = () => {
 </script>
 
 <template>
-  <ChildInstance ref="instanceRef" />
-  <el-button @click="getChildInstance">获取子组件属性和方法</el-button>
+  <div>
+    <ChildInstance ref="instanceRef" />
+    <el-button @click="getChildInstance">获取子组件属性和方法</el-button>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref, defineExpose } from "vue";
+defineOptions({
+  name: "ChildComponent",
+  inheritAttrs: false
+});
 
 const childValue = ref("来自子组件的属性");
 const childFunc = () => {

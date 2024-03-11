@@ -72,18 +72,20 @@ const resetForm = () => {
 </script>
 
 <template>
-  <div>{{ formData }}</div>
-  <FormItemA
-    @add-submit-event="addEventToFormEventList"
-    @add-reset-event="addFormResetEvent"
-  />
-  <FormItemB
-    @add-submit-event="addEventToFormEventList"
-    @add-reset-event="addFormResetEvent"
-  />
-  <el-button type="primary" @click="submitHandler">表单提交</el-button>
-  <el-button @click="resetForm">重置表单</el-button>
-  <el-button @click="getFormData">模拟接口请求表单回填数据</el-button>
+  <div>
+    <div>{{ formData }}</div>
+    <FormItemA
+      @add-submit-event="addEventToFormEventList"
+      @add-reset-event="addFormResetEvent"
+    />
+    <FormItemB
+      @add-submit-event="addEventToFormEventList"
+      @add-reset-event="addFormResetEvent"
+    />
+    <el-button type="primary" @click="submitHandler">表单提交</el-button>
+    <el-button @click="resetForm">重置表单</el-button>
+    <el-button @click="getFormData">模拟接口请求表单回填数据</el-button>
+  </div>
 </template>
 
 <style scoped lang="scss"></style>

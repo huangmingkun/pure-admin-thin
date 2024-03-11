@@ -9,27 +9,27 @@ export default {
   },
   children: [
     {
-      path: "/component/input-demo",
-      name: "input-demo",
+      path: "/component/InputDemo",
+      name: "InputDemo",
       component: () => import("@/views/component/input/input.vue"),
       meta: {
         title: "input组件demo"
       }
     },
     {
-      path: "/component/mouse-position",
-      name: "mouse-position",
+      path: "/component/MousePosition",
+      name: "MousePosition",
       component: () =>
-        import("@/views/component/mouse-position/mouse-position.vue"),
+        import("@/views/component/mouse-position/MousePosition.vue"),
       meta: {
         title: "鼠标位置"
       }
     },
     {
-      path: "/component/father-instance",
-      name: "get-instance",
+      path: "/component/GetInstance",
+      name: "GetInstance",
       component: () =>
-        import("@/views/component/father-instance/father-instance.vue"),
+        import("@/views/component/father-instance/GetInstance.vue"),
       meta: {
         title: "获取子组件实例"
       }
