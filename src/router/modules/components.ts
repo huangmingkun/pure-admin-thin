@@ -49,6 +49,15 @@ export default {
       meta: {
         title: "权限指令"
       }
+    },
+    {
+      path: "/component/ExcelExportQRCode",
+      name: "ExcelExportQRCode",
+      component: () =>
+        import("@/views/component/excel-export-qrcode/ExcelExportQRCode.vue"),
+      meta: {
+        title: "excel导出二维码"
+      }
     }
   ]
 } as RouteConfigsTable;
