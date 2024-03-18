@@ -8,8 +8,9 @@ import {
   watch,
   nextTick
 } from "vue";
+import type { Ref } from "vue";
 import type { FormInstance, FormRules } from "element-plus";
-
+import { FormData } from "./ComplexForm.vue";
 interface RuleForm {
   name: string;
   region: string;
@@ -23,7 +24,7 @@ interface Emits {
 const emits = defineEmits<Emits>();
 
 // 接受注入的默认表单数据（表单回填）
-const defaultFormData = inject("defaultFormData");
+const defaultFormData = inject<Ref<FormData>>("defaultFormData");
 
 onMounted(() => {
   // 将当前表单验证方法传递给父组件维护的数组，父组件点击提交时，统一遍历数组进行表单验证

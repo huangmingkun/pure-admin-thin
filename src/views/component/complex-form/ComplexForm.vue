@@ -6,8 +6,29 @@ import { reactive, provide, ref, onMounted } from "vue";
 defineOptions({
   name: "ComplexForm"
 });
+export interface FormData {
+  name: string;
+  region: string;
+  count: number | string;
+  date1: string;
+  date2: string;
+  delivery: boolean;
+  type: string[];
+  resource: string;
+  desc: string;
+}
 
-const formData = ref({});
+const formData = ref<FormData>({
+  name: "",
+  region: "",
+  count: "",
+  date1: "",
+  date2: "",
+  delivery: false,
+  type: [],
+  resource: "",
+  desc: ""
+});
 // 向子组件注入表单的初始化的值或者回填的值，一般是编辑表单的时候需要传递
 provide("defaultFormData", formData);
 
