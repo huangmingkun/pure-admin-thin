@@ -74,6 +74,14 @@ export default {
       meta: {
         title: "图片懒加载指令"
       }
+    },
+    {
+      path: "/component/VueuseDemo",
+      name: "VueuseDemo",
+      component: () => import("@/views/component/vueuse-demo/VueuseDemo.vue"),
+      meta: {
+        title: "vueuse示例"
+      }
     }
   ]
 } as RouteConfigsTable;
