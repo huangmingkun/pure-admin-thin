@@ -58,6 +58,14 @@ export default {
       meta: {
         title: "excel导出二维码"
       }
+    },
+    {
+      path: "/component/EventBus",
+      name: "EventBus",
+      component: () => import("@/views/component/event-bus/EventBus.vue"),
+      meta: {
+        title: "EventBus兄弟组件通信"
+      }
     }
   ]
 } as RouteConfigsTable;

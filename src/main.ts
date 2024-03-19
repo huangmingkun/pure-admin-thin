@@ -7,7 +7,7 @@ import { createApp, Directive } from "vue";
 import { MotionPlugin } from "@vueuse/motion";
 // import { useEcharts } from "@/plugins/echarts";
 import { injectResponsiveStorage } from "@/utils/responsive";
-
+import mitt, { Emitter } from "mitt";
 // import Table from "@pureadmin/table";
 // import PureDescriptions from "@pureadmin/descriptions";
 
@@ -23,7 +23,14 @@ import "./assets/iconfont/iconfont.js";
 import "./assets/iconfont/iconfont.css";
 
 const app = createApp(App);
-
+const emitter = mitt();
+declare module "vue" {
+  export interface CommonCustomProperties {
+    $Bus: typeof emitter;
+    $globalObj: Object;
+  }
+}
+app.config.globalProperties.$Bus = emitter;
 // 自定义指令
 import * as directives from "@/directives";
 Object.keys(directives).forEach(key => {
