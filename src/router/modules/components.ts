@@ -66,6 +66,14 @@ export default {
       meta: {
         title: "EventBus兄弟组件通信"
       }
+    },
+    {
+      path: "/component/ImgLazy",
+      name: "EventBus",
+      component: () => import("@/views/component/img-lazy/ImgLazy.vue"),
+      meta: {
+        title: "图片懒加载指令"
+      }
     }
   ]
 } as RouteConfigsTable;
