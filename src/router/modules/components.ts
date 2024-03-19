@@ -82,6 +82,14 @@ export default {
       meta: {
         title: "vueuse示例"
       }
+    },
+    {
+      path: "/component/customHook",
+      name: "CustomHook",
+      component: () => import("@/views/component/custom-hook/CustomHook.vue"),
+      meta: {
+        title: "hook图片转base64"
+      }
     }
   ]
 } as RouteConfigsTable;
