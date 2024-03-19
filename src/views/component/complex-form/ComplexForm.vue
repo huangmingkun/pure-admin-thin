@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FormItemA from "@/views/component/complex-form/FormItemA.vue";
 import FormItemB from "@/views/component/complex-form/FormItemB.vue";
-import { reactive, provide, ref, onMounted } from "vue";
+import { reactive, provide, ref, onMounted, readonly } from "vue";
 
 defineOptions({
   name: "ComplexForm"
@@ -30,7 +30,7 @@ const formData = ref<FormData>({
   desc: ""
 });
 // 向子组件注入表单的初始化的值或者回填的值，一般是编辑表单的时候需要传递
-provide("defaultFormData", formData);
+provide("defaultFormData", readonly(formData));
 
 const getFormData = () => {
   formData.value = {
