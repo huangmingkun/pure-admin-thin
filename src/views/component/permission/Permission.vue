@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { Directive } from "vue";
+import type { Directive, DirectiveBinding } from "vue";
 // 模拟接口获取当前用户权限
 const userPermissions = ["add", "edit"];
-const vHasPermission: Directive = (el, binding) => {
+const vHasPermission: Directive = (
+  el: HTMLElement,
+  binding: DirectiveBinding
+) => {
   // console.log(el, binding);
   const { value } = binding;
   if (!userPermissions.includes(value)) {
