@@ -90,6 +90,15 @@ export default {
       meta: {
         title: "hook图片转base64"
       }
+    },
+    {
+      path: "/component/customDebounce",
+      name: "CustomDebounce",
+      component: () =>
+        import("@/views/component/custom-debounce/CustomDebounce.vue"),
+      meta: {
+        title: "自定义防抖"
+      }
     }
   ]
 } as RouteConfigsTable;
