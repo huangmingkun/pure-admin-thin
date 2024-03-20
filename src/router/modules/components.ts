@@ -69,7 +69,7 @@ export default {
     },
     {
       path: "/component/ImgLazy",
-      name: "EventBus",
+      name: "ImgLazy",
       component: () => import("@/views/component/img-lazy/ImgLazy.vue"),
       meta: {
         title: "图片懒加载指令"
