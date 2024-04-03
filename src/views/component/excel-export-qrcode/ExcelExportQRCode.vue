@@ -43,7 +43,9 @@ const readExcel = e => {
       readExcelResult.value = [];
       const data = ev.target.result;
       const workbook = XLSX.read(data, { type: "binary", cellDates: true });
+      // 解析每个sheet表
       for (const sheet in workbook.Sheets) {
+        // 避免直接使用对象原型链的hasOwnProperty方法，因为它可能会被重写
         if (Object.prototype.hasOwnProperty.call(workbook.Sheets, sheet)) {
           //解析excel文件得到数据
           readExcelResult.value = readExcelResult.value.concat(
@@ -86,8 +88,9 @@ const qrcodeClick = async () => {
   for (const i in resDatas) {
     let qrcodeValue = "";
     let qrcodeName = "";
-    // 数据处理
+    // 用户选择的表头字段后，根据已选字段数组checkedHeadArr从
     qrcodeValue = getQrcodeValue(i, resDatas);
+    // qrcodeValue = Object.values();
     console.log("qrcodeValue", qrcodeValue);
     // qrcodeValue = resDatas[i]['固定资产编'] + ',' + resDatas[i]['设备型号'] + ',' + resDatas[i]['设备序列号'] + ',' + resDatas[i]['维保期']
     // 生成二维码（canvas）
@@ -169,7 +172,7 @@ const handleCheckAllChange = val => {
   isIndeterminate = false;
 };
 // 表头数据单选操作
-const handleCheckedCitiesChange = value => {
+const handleCheckedChange = value => {
   const checkedCount = value.length;
   checkAll.value = checkedCount === allHeadArr.arr.length;
   isIndeterminate = checkedCount > 0 && checkedCount < allHeadArr.arr.length;
@@ -207,7 +210,7 @@ const handleCheckedCitiesChange = value => {
         <div style="margin: 15px 0" />
         <el-checkbox-group
           v-model="checkedHeadArr.arr"
-          @change="handleCheckedCitiesChange"
+          @change="handleCheckedChange"
         >
           <el-checkbox
             v-for="head in allHeadArr.arr"
