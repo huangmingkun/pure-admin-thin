@@ -36,27 +36,15 @@ import * as directives from "@/directives";
 Object.keys(directives).forEach(key => {
   app.directive(key, (directives as { [key: string]: Directive })[key]);
 });
-
-// 全局注册`@iconify/vue`图标库
-import {
-  IconifyIconOffline,
-  IconifyIconOnline,
-  FontIcon
-} from "./components/ReIcon";
-app.component("IconifyIconOffline", IconifyIconOffline);
-app.component("IconifyIconOnline", IconifyIconOnline);
-app.component("FontIcon", FontIcon);
-
-// 全局注册按钮级别权限组件
-import { Auth } from "@/components/ReAuth";
-app.component("Auth", Auth);
+// 动态全局注册组件
+import loadComponent from "@/utils/loadComponents";
 
 getServerConfig(app).then(async config => {
   app.use(router);
   await router.isReady();
   injectResponsiveStorage(app, config);
   setupStore(app);
-  app.use(MotionPlugin).use(ElementPlus);
+  app.use(MotionPlugin).use(ElementPlus).use(loadComponent);
   // .use(useEcharts);
   // .use(Table);
   // .use(PureDescriptions);
