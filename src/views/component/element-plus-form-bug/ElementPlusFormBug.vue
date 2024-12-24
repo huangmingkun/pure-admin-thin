@@ -2,11 +2,7 @@
 import {
   reactive,
   ref,
-  defineEmits,
-  onMounted,
-  inject,
-  watch,
-  nextTick
+  onMounted
 } from "vue";
 import type { FormInstance, FormRules } from "element-plus";
 interface RuleForm {
