@@ -99,6 +99,25 @@ export default {
       meta: {
         title: "自定义防抖"
       }
+    },
+    {
+      path: "/component/customNew",
+      name: "CustomNew",
+      component: () => import("@/views/component/custom-new/CustomNew.vue"),
+      meta: {
+        title: "实现new函数"
+      }
+    },
+    {
+      path: "/component/elementPlusFormBug",
+      name: "ElementPlusFormBug",
+      component: () =>
+        import(
+          "@/views/component/element-plus-form-bug/ElementPlusFormBug.vue"
+        ),
+      meta: {
+        title: "form表单bug"
+      }
     }
   ]
 } as RouteConfigsTable;
